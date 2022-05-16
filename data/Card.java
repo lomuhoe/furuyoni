@@ -6,7 +6,19 @@ public class Card implements Serializable, Comparable<Card>{
     private int cardId;
     private String name;
     private String effect;
+    private int cost;
     private int subType;
+
+    public Card() {
+        super();
+    }
+    public Card(int cardId, String name, String effect, int cost, int subType) {
+        this.cardId = cardId;
+        this.name = name;
+        this.effect = effect;
+        this.cost = cost;
+        this.subType = subType;
+    }
 
     //getter
     public int getCardId() {
@@ -17,6 +29,9 @@ public class Card implements Serializable, Comparable<Card>{
     }
     public int getSubType() {
         return subType;
+    }
+    public int getCost() {
+        return cost;
     }
     public String getEffect() {
         return effect;
@@ -32,19 +47,20 @@ public class Card implements Serializable, Comparable<Card>{
     public void setEffect(String effect) {
         this.effect = effect;
     }
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
     public void setSubType(int subType) {
         this.subType = subType;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        return "Card.toString()";
     }
 
     @Override
     public int compareTo(Card card) {
-        
-        return 0;
+        return this.cardId - card.cardId;
     }
 }
